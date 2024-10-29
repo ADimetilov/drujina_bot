@@ -32,7 +32,7 @@ async def commit(msg:Message,state:FSMContext,bot:Bot):
     await state.update_data(typewarn = msg.text)
     id = msg.from_user.id
     data = await state.get_data()
-    await bot.send_message(-1002321664383,f"<b>Ссылка:</b> {data['adres']}\n<b>Тип нарушения:</b> {data['typewarn']}\n<b>ФИО отправителя: </b>{db.get_fio(id)}\n<b>Колледж:</b> {db.get_collage(id)}\n<b>Группа:</b> {db.get_group(id)}",reply_markup=ban(msg.from_user.id))
+    await bot.send_message(-1002420612746,f"<b>Ссылка:</b> {data['adres']}\n<b>Тип нарушения:</b> {data['typewarn']}\n<b>ФИО отправителя: </b>{db.get_fio(id)}\n<b>Колледж:</b> {db.get_collage(id)}\n<b>Группа:</b> {db.get_group(id)}",reply_markup=ban(msg.from_user.id))
     await msg.answer("Нарушение зафиксировано и отравлено на проверку, спасибо за вашу активную гражданскую позицию❤️",reply_markup=get_inline_kb())
     await state.clear()
 
