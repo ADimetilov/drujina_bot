@@ -3,7 +3,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 def get_inline_kb():
     inline_kb_list = [
             [InlineKeyboardButton(text = "Сообщить о правонарушении🔞",callback_data='get_warn')],
-            [InlineKeyboardButton(text="Наш телеграм-канал📰", url='https://t.me/kiberdruzhina')],
+            [InlineKeyboardButton(text="Наш телеграм-канал📰", url='https://t.me/cybersquadoff')],
             [InlineKeyboardButton(text="Правила",callback_data="rules")]
     ]
     return InlineKeyboardMarkup(inline_keyboard=inline_kb_list)
