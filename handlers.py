@@ -13,7 +13,6 @@ async def start_handler(msg:Message):
         db.newuser(msg.from_user.id)
     await msg.answer("Добрый день. Чем я могу вам помочь?👋",reply_markup=get_inline_kb())
 
-
 class Form(StatesGroup):
     FIO = State()
     Collage = State()
