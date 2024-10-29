@@ -11,8 +11,8 @@ import handlers
 
 async def main():
     try:
-         # в proxy указан прокси сервер pythonanywhere, он нужен для подключения
-        bot = Bot(token = config.BOT_TOKEN,default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+        session = AiohttpSession(proxy='http://proxy.server:3128') # в proxy указан прокси сервер pythonanywhere, он нужен для подключения
+        bot = Bot(token = config.BOT_TOKEN,default=DefaultBotProperties(parse_mode=ParseMode.HTML),session=session)
         dp = Dispatcher(storage = MemoryStorage())
         dp.include_router(handlers.router)
         await bot.delete_webhook(drop_pending_updates=True)
